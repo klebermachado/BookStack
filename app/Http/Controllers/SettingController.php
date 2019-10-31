@@ -68,7 +68,7 @@ class SettingController extends Controller
             $logoFile = $request->file('app_logo');
             $this->imageRepo->destroyByType('system');
             $image = $this->imageRepo->saveNew($logoFile, 'system', 0, null, 86);
-            setting()->put('app-logo', $image->url);
+            setting()->put('app-logo', $image->path);
         }
 
         // Clear logo image if requested
