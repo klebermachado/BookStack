@@ -447,7 +447,7 @@ class WysiwygEditor {
             browser_spellcheck: true,
             relative_urls: false,
             directionality : this.textDirection,
-            remove_script_host: false,
+            remove_script_host: true,
             document_base_url: window.baseUrl('/'),
             end_container_on_empty_block: true,
             statusbar: false,
