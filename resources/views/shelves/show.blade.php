@@ -44,6 +44,7 @@
 @stop
 
 @section('left')
+    @auth
 
     @if($shelf->tags->count() > 0)
         <div id="tags" class="mb-xl">
@@ -73,9 +74,11 @@
             @include('partials.activity-list', ['activity' => $activity])
         </div>
     @endif
+    @endauth
 @stop
 
 @section('right')
+    @auth
     <div class="actions mb-xl">
         <h5>{{ trans('common.actions') }}</h5>
         <div class="icon-list text-primary">
@@ -112,6 +115,7 @@
 
         </div>
     </div>
+    @endauth
 @stop
 
 

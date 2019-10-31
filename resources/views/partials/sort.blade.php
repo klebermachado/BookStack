@@ -2,6 +2,7 @@
     $selectedSort = (isset($sort) && array_key_exists($sort, $options)) ? $sort : array_keys($options)[0];
     $order = (isset($order) && in_array($order, ['asc', 'desc'])) ? $order : 'asc';
 ?>
+@auth
 <div class="list-sort-container" list-sort-control>
     <div class="list-sort-label">{{ trans('common.sort') }}</div>
     <form action="{{ url("/settings/users/{$currentUser->id}/change-sort/{$type}") }}" method="post">
@@ -27,3 +28,4 @@
         </div>
     </form>
 </div>
+@endauth

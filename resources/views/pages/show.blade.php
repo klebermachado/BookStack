@@ -69,6 +69,7 @@
 @stop
 
 @section('right')
+    @auth
     <div id="page-details" class="entity-details mb-xl">
         <h5>{{ trans('common.details') }}</h5>
         <div class="body text-small blended-links">
@@ -111,6 +112,7 @@
             @endif
         </div>
     </div>
+    @endauth
 
     <div class="actions mb-xl">
         <h5>Actions</h5>

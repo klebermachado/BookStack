@@ -56,6 +56,7 @@
 
 @section('right')
 
+    @auth
     <div class="mb-xl">
         <h5>{{ trans('common.details') }}</h5>
         <div class="blended-links text-small text-muted">
@@ -82,6 +83,7 @@
             @endif
         </div>
     </div>
+    @endauth
 
     <div class="actions mb-xl">
         <h5>{{ trans('common.actions') }}</h5>
@@ -130,6 +132,7 @@
 
 @section('left')
 
+    @auth
     @include('partials.entity-dashboard-search-box')
 
     @if($chapter->tags->count() > 0)
@@ -137,6 +140,7 @@
             @include('components.tag-list', ['entity' => $chapter])
         </div>
     @endif
+    @endauth
 
     @include('partials.book-tree', ['book' => $book, 'sidebarTree' => $sidebarTree])
 @stop

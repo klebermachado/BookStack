@@ -5,6 +5,7 @@
 @stop
 
 @section('left')
+    @auth
     @if($recents)
         <div id="recents" class="mb-xl">
             <h5>{{ trans('entities.recently_viewed') }}</h5>
@@ -29,10 +30,11 @@
             <div class="body text-muted">{{ trans('entities.books_new_empty') }}</div>
         @endif
     </div>
+    @endauth
 @stop
 
 @section('right')
-
+    @auth
     <div class="actions mb-xl">
         <h5>{{ trans('common.actions') }}</h5>
         <div class="icon-list text-primary">
@@ -46,5 +48,5 @@
             @include('partials.view-toggle', ['view' => $view, 'type' => 'book'])
         </div>
     </div>
-
+    @endauth
 @stop

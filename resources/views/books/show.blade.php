@@ -59,7 +59,7 @@
 
 
 @section('right')
-
+    @auth
     <div class="mb-xl">
         <h5>{{ trans('common.details') }}</h5>
         <div class="text-small text-muted blended-links">
@@ -124,10 +124,11 @@
             @include('partials.entity-export-menu', ['entity' => $book])
         </div>
     </div>
-
+    @endauth
 @stop
 
 @section('left')
+    @auth
 
     @include('partials.entity-dashboard-search-box')
 
@@ -143,5 +144,6 @@
             @include('partials.activity-list', ['activity' => $activity])
         </div>
     @endif
+    @endauth
 @stop
 
