@@ -26,22 +26,22 @@ return [
     'chapter_move'                => 'capitulo movido',
 
     // Books
-    'book_create'                 => 'livro criado',
-    'book_create_notification'    => 'Livro criado com sucesso',
-    'book_update'                 => 'livro atualizado',
-    'book_update_notification'    => 'Livro atualizado com sucesso',
-    'book_delete'                 => 'livro excluído',
-    'book_delete_notification'    => 'Livro excluído com sucesso',
-    'book_sort'                   => 'livro classificado',
-    'book_sort_notification'      => 'Livro reclassificado com sucesso',
+    'book_create'                 => 'departamento criado',
+    'book_create_notification'    => 'Departamento criado com sucesso',
+    'book_update'                 => 'departamento atualizado',
+    'book_update_notification'    => 'Departamento atualizado com sucesso',
+    'book_delete'                 => 'departamento excluído',
+    'book_delete_notification'    => 'Departamento excluído com sucesso',
+    'book_sort'                   => 'departamento classificado',
+    'book_sort_notification'      => 'Departamento reclassificado com sucesso',
 
     // Bookshelves
     'bookshelf_create'            => 'prateleira de livros criada',
-    'bookshelf_create_notification'    => 'Prateleira de Livros criada com sucesso',
-    'bookshelf_update'                 => 'prateleira de livros atualizada',
-    'bookshelf_update_notification'    => 'Prateleira de Livros atualizada com sucesso',
-    'bookshelf_delete'                 => 'prateleira de livros excluída',
-    'bookshelf_delete_notification'    => 'Prateleira de Livros excluída com sucesso',
+    'bookshelf_create_notification'    => 'Unidade de Departamentos criada com sucesso',
+    'bookshelf_update'                 => 'unidade de departamentos atualizada',
+    'bookshelf_update_notification'    => 'Unidade de Departamentos atualizada com sucesso',
+    'bookshelf_delete'                 => 'unidade de departamentos excluída',
+    'bookshelf_delete_notification'    => 'Unidade de Departamentos excluída com sucesso',
 
     // Other
     'commented_on'                => 'comentou em',

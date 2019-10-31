@@ -49,12 +49,12 @@ return [
 
     // Entities
     'entity_not_found' => 'Entidade não encontrada',
-    'bookshelf_not_found' => 'Prateleira de Livros não encontrada',
-    'book_not_found' => 'Livro não encontrado',
+    'bookshelf_not_found' => 'Unidade de Departamentos não encontrada',
+    'book_not_found' => 'Departamento não encontrado',
     'page_not_found' => 'Página não encontrada',
     'chapter_not_found' => 'Capítulo não encontrado',
-    'selected_book_not_found' => 'O livro selecionado não foi encontrado',
-    'selected_book_chapter_not_found' => 'O Livro selecionado ou Capítulo não foi encontrado',
+    'selected_book_not_found' => 'O departamento selecionado não foi encontrado',
+    'selected_book_chapter_not_found' => 'O Departamento selecionado ou Capítulo não foi encontrado',
     'guests_cannot_save_drafts' => 'Convidados não podem salvar rascunhos',
 
     // Users
