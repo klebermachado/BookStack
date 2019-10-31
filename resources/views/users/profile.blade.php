@@ -46,7 +46,7 @@
                                         <span>{{ trans_choice('entities.x_books', $assetCounts['books']) }}</span>
                                     </a>
                                     <a href="#recent-shelves" class="text-bookshelf icon-list-item">
-                                        <span>@icon('bookshelf')</span>
+                                        <span>@icon('organization')</span>
                                         <span>{{ trans_choice('entities.x_shelves', $assetCounts['shelves']) }}</span>
                                     </a>
                                 </div>

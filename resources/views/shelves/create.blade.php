@@ -8,7 +8,7 @@
             @include('partials.breadcrumbs', ['crumbs' => [
                 '/shelves' => [
                     'text' => trans('entities.shelves'),
-                    'icon' => 'bookshelf',
+                    'icon' => 'organization',
                 ],
                 '/create-shelf' => [
                     'text' => trans('entities.shelves_create'),
