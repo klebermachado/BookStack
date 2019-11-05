@@ -19,6 +19,7 @@ return [
     'description' => 'Descrição',
     'role' => 'Regra',
     'cover_image' => 'Imagem de capa',
+    'cover_color' => 'Cor da capa',
     'cover_image_description' => 'Esta imagem deve ser aproximadamente 300x170px.',
     
     // Actions

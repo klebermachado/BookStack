@@ -604,9 +604,11 @@ ul.pagination {
   }
   img {
     display: block;
+    position: absolute;
+    left: 2px;
+    bottom: 2px;
     width: 100%;
-    max-width: 100%;
-    height: auto;
+    max-width: 30%;
   }
 }
 .featured-image-container-wrap {

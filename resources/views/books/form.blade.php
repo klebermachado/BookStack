@@ -31,6 +31,26 @@
     </div>
 </div>
 
+<div class="form-group" collapsible id="logo-control">
+    <button type="button" class="collapse-title text-primary" collapsible-trigger aria-expanded="false">
+        <label>{{ trans('common.cover_color') }}</label>
+    </button>
+    <div class="collapse-content" collapsible-content>
+        <div class="grid half gap-xl">
+            <div>
+                <label class="setting-list-label">{{ trans('settings.app_primary_color') }}</label>
+                <p class="small">{!! trans('settings.app_primary_color_desc') !!}</p>
+            </div>
+            <div setting-app-color-picker class="text-m-right">
+                <input type="color" value="{{ setting('app-color') }}" name="setting-app-color" id="setting-app-color" placeholder="#206ea7">
+                <input type="hidden" value="{{ setting('app-color-light') }}" name="setting-app-color-light" id="setting-app-color-light">
+                <br>
+                <button type="button" class="text-button text-muted mt-s mx-s" setting-app-color-picker-reset>{{ trans('common.reset') }}</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="form-group" collapsible id="tags-control">
     <button type="button" class="collapse-title text-primary" collapsible-trigger aria-expanded="false">
         <label for="tag-manager">{{ trans('entities.book_tags') }}</label>

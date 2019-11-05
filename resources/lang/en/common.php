@@ -19,6 +19,7 @@ return [
     'description' => 'Description',
     'role' => 'Role',
     'cover_image' => 'Cover image',
+    'cover_color' => 'Cover color',
     'cover_image_description' => 'This image should be approx 440x250px.',
     
     // Actions

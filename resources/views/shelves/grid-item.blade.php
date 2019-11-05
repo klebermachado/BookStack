@@ -2,9 +2,11 @@
     <a href="{{(!!$shelf->link) ? $shelf->link : $shelf->getUrl()}}"
        data-entity-type="bookshelf" data-entity-id="{{$shelf->id}}" style="text-decoration: none;">
         <div class="bg-shelf featured-image-container-wrap">
-            <div class="featured-image-container" @if($shelf->cover) style="background-image: url('{{ $shelf->getBookCover() }}')"@endif>
+            <div class="featured-image-container">
+            @if($shelf->cover)
+            <img src="{{ $shelf->getBookCover() }}" alt="Icon card"></img>
+            @endif
             </div>
-            {{-- @icon('organization') --}}
         </div>
         <div class="grid-card-content">
             <h2>{{$shelf->getShortName(35)}}</h2>

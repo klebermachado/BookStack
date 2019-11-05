@@ -1,9 +1,11 @@
 <div class="grid-card relative-position">
     <a href="{{(!!$book->link) ? $book->link : $book->getUrl()}}" data-entity-type="book" data-entity-id="{{$book->id}}" style="text-decoration: none;">
         <div class="bg-book featured-image-container-wrap">
-            <div class="featured-image-container" @if($book->cover) style="background-image: url('{{ $book->getBookCover() }}')"@endif>
+            <div class="featured-image-container">
+                @if($book->cover)
+                <img src="{{ $book->getBookCover() }}" alt="Icon card"></img>
+                @endif
             </div>
-            {{-- @icon('book') --}}
         </div>
         <div class="grid-card-content">
             <h2>{{$book->getShortName(35)}}</h2>

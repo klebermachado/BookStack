@@ -72,10 +72,12 @@
 }
 .bg-book {
   background-color: var(--color-book);
+  background-image: linear-gradient(45deg, transparent, rgba(255,255,255,.3));
 }
 .bg-chapter {
   background-color: var(--color-chapter);
 }
 .bg-shelf {
   background-color: var(--color-bookshelf);
+  background-image: linear-gradient(45deg, transparent, rgba(255,255,255,.3));
 }

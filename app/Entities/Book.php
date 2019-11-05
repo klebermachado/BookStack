@@ -47,7 +47,7 @@ class Book extends Entity implements HasCoverImage
         }
 
         try {
-            $cover = $this->cover ? url($this->cover->getThumb($width, $height, false)) : $default;
+            $cover = $this->cover ? url($this->cover->getThumb($width, $height, true)) : $default;
         } catch (Exception $err) {
             $cover = $default;
         }
