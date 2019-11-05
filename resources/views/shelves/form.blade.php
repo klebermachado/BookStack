@@ -60,6 +60,22 @@
     </div>
 </div>
 
+<div class="form-group" collapsible id="logo-control">
+    <button type="button" class="collapse-title text-primary" collapsible-trigger aria-expanded="false">
+        <label>{{ trans('common.cover_color') }}</label>
+    </button>
+    <div class="collapse-content" collapsible-content>
+        <div class="grid half gap-xl">
+            <div>
+                <label class="setting-list-label">{{ trans('common.cover_color') }}</label>
+            </div>
+            <div setting-app-color-picker class="text-m-right">
+                <input type="color" value="{{ $model->color ?? '#af4d0d' }}" name="color" id="color" placeholder="#206ea7">
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="form-group" collapsible id="tags-control">
     <button type="button" class="collapse-title text-primary" collapsible-trigger aria-expanded="false">
         <label for="tag-manager">{{ trans('entities.shelf_tags') }}</label>

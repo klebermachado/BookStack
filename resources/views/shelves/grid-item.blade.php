@@ -1,7 +1,7 @@
 <div class="bookshelf-grid-item grid-card relative-position">
     <a href="{{(!!$shelf->link) ? $shelf->link : $shelf->getUrl()}}"
        data-entity-type="bookshelf" data-entity-id="{{$shelf->id}}" style="text-decoration: none;">
-        <div class="bg-shelf featured-image-container-wrap">
+        <div class="bg-shelf featured-image-container-wrap" @if(!!$shelf->color) style="background-color: {{ $shelf->color }}" @endif>
             <div class="featured-image-container">
             @if($shelf->cover)
             <img src="{{ $shelf->getBookCover() }}" alt="Icon card"></img>

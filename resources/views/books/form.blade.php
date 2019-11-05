@@ -38,14 +38,10 @@
     <div class="collapse-content" collapsible-content>
         <div class="grid half gap-xl">
             <div>
-                <label class="setting-list-label">{{ trans('settings.app_primary_color') }}</label>
-                <p class="small">{!! trans('settings.app_primary_color_desc') !!}</p>
+                <label class="setting-list-label">{{ trans('common.cover_color') }}</label>
             </div>
             <div setting-app-color-picker class="text-m-right">
-                <input type="color" value="{{ setting('app-color') }}" name="setting-app-color" id="setting-app-color" placeholder="#206ea7">
-                <input type="hidden" value="{{ setting('app-color-light') }}" name="setting-app-color-light" id="setting-app-color-light">
-                <br>
-                <button type="button" class="text-button text-muted mt-s mx-s" setting-app-color-picker-reset>{{ trans('common.reset') }}</button>
+                <input type="color" value="{{ $model->color ?? '#077b70' }}" name="color" id="color" placeholder="#206ea7">
             </div>
         </div>
     </div>
