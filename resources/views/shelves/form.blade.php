@@ -10,6 +10,11 @@
     @include('form.textarea', ['name' => 'description'])
 </div>
 
+<div class="form-group stretch-inputs">
+    <label for="link">Link</label>
+    @include('form.text', ['name' => 'link'])
+</div>
+
 <div shelf-sort class="grid half gap-xl">
     <div class="form-group">
         <label for="books">{{ trans('entities.shelves_books') }}</label>
