@@ -13,9 +13,9 @@
         <div class="book-content">
             <p class="text-muted">{!! nl2br(e($shelf->description)) !!}</p>
             @if(count($shelf->visibleBooks) > 0)
-                <div class="entity-list">
+                <div class="grid third">
                     @foreach($shelf->visibleBooks as $book)
-                        @include('books.list-item', ['book' => $book])
+                        @include('books.grid-item', ['book' => $book])
                     @endforeach
                 </div>
             @else
