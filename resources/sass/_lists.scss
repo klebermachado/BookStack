@@ -470,8 +470,9 @@ ul.pagination {
   align-self: stretch;
   width: 140px;
   flex: none;
-  background-size: cover;
-  background-position: 50% 50%;
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: bottom 2px left 2px;
   border-radius: 3px;
   position: relative;
   margin-right: $-l;
@@ -609,6 +610,7 @@ ul.pagination {
     bottom: 2px;
     width: 100%;
     max-width: 30%;
+    outline: none !important;
   }
 }
 .featured-image-container-wrap {

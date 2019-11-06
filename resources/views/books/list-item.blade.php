@@ -1,6 +1,6 @@
 <div class="relative-position entity-list-item" style="padding: 0">
     <a href="{{ (!!$book->link) ? $book->link : $book->getUrl() }}" class="book entity-list-item" data-entity-type="book" data-entity-id="{{$book->id}}">
-        <div class="entity-list-item-image bg-book" style="background-image: url('{{ $book->getBookCover() }}')">
+        <div class="entity-list-item-image bg-book" style="@if(!!$book->color) background-color: {{ $book->color }}; @endif background-image: url('{{ $book->getBookCover() }}')">
             {{-- @icon('book') --}}
         </div>
         <div class="content">

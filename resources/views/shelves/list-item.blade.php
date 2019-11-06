@@ -1,6 +1,6 @@
 <div class="relative-position entity-list-item" style="padding: 0">
     <a href="{{ (!!$shelf->link) ? $shelf->link : $shelf->getUrl() }}" class="shelf entity-list-item" data-entity-type="bookshelf" data-entity-id="{{$shelf->id}}">
-        <div class="entity-list-item-image bg-shelf @if($shelf->image_id) has-image @endif" style="background-image: url('{{ $shelf->getBookCover() }}')">
+        <div class="entity-list-item-image bg-shelf @if($shelf->image_id) has-image @endif" style="@if(!!$shelf->color) background-color: {{ $shelf->color }}; @endif background-image: url('{{ $shelf->getBookCover() }}')">
             {{-- @icon('bookshelf') --}}
         </div>
         <div class="content py-xs">
