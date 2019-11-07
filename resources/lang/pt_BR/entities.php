@@ -158,6 +158,8 @@ return [
     'chapters_permissions_active' => 'Permissões de Capítulo Ativadas',
     'chapters_permissions_success' => 'Permissões de Capítulo Atualizadas',
     'chapters_search_this' => 'Pesquisar este Capítulo',
+    'chapter_icon' => 'Icone do capítulo',
+    'chapter_icon_desc' => 'Escolha o ícone que será mostrando a frente do capítulo.',
 
     // Pages
     'page' => 'Página',

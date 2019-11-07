@@ -22,7 +22,9 @@ class AddAttributeLinkAndColor extends Migration
             $table->string('link')->after('description')->nullable();
         });
         Schema::table('chapters', function (Blueprint $table) {
+            $table->integer('image_id')->unsigned()->after('description')->nullable();
             $table->string('link')->after('description')->nullable();
+            $table->foreign('image_id')->references('id')->on('images');
         });
     }
 
@@ -43,6 +45,7 @@ class AddAttributeLinkAndColor extends Migration
         });
         Schema::table('chapters', function (Blueprint $table) {
             $table->dropColumn('link');
+            $table->dropColumn('image_id');
         });
     }
 }

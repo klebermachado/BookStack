@@ -1,6 +1,16 @@
 <div class="relative-position entity-list-item" style="padding: 0;">
     <a href="{{ (!!$chapter->link) ? $chapter->link : $chapter->getUrl() }}" class="chapter entity-list-item @if($chapter->hasChildren()) has-children @endif" data-entity-type="chapter" data-entity-id="{{$chapter->id}}">
         <span class="icon text-chapter">@icon('chapter')</span>
+        @if ($chapter->image_id)
+        <div>
+            <img src="{{ $chapter->getChapterCover() }}" style="
+                padding-right: 10px;
+                width: 50px;
+                display: inline-block;
+                outline: none;
+            ">
+        </div>
+        @endif
         <div class="content">
             <h4 class="entity-list-item-name break-text">{{ $chapter->name }}</h4>
             <div class="entity-item-snippet">

@@ -1,6 +1,8 @@
 <?php namespace BookStack\Entities;
 
+use BookStack\Uploads\Image;
 use Illuminate\Support\Collection;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * Class Chapter
@@ -11,7 +13,7 @@ class Chapter extends BookChild
 {
     public $searchFactor = 1.3;
 
-    protected $fillable = ['name', 'description', 'link', 'priority', 'book_id'];
+    protected $fillable = ['name', 'description', 'link', 'image_id', 'priority', 'book_id'];
 
     /**
      * Get the pages that this chapter contains.
@@ -69,5 +71,34 @@ class Chapter extends BookChild
         ->orderBy('draft', 'desc')
         ->orderBy('priority', 'asc')
         ->get();
+    }
+
+    public function icon(): BelongsTo
+    {
+        return $this->belongsTo(Image::class, 'image_id');
+    }
+
+    public function getChapterCover($width = 250, $height = 250)
+    {
+        // TODO - Make generic, focused on books right now, Perhaps set-up a better image
+        $default = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+        if (!$this->image_id) {
+            return $default;
+        }
+
+        try {
+            $cover = $this->cover ? url($this->cover->getThumb($width, $height, true)) : $default;
+        } catch (\Exception $err) {
+            $cover = $default;
+        }
+        return $cover;
+    }
+
+    /**
+     * Get the cover image of the shelf
+     */
+    public function cover(): BelongsTo
+    {
+        return $this->belongsTo(Image::class, 'image_id');
     }
 }

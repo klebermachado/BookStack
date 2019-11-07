@@ -4,6 +4,7 @@ use Activity;
 use BookStack\Entities\Book;
 use BookStack\Entities\Managers\BookContents;
 use BookStack\Entities\Repos\ChapterRepo;
+use BookStack\Uploads\ImageRepo;
 use BookStack\Exceptions\MoveOperationException;
 use BookStack\Exceptions\NotFoundException;
 use Illuminate\Http\Request;
@@ -15,13 +16,15 @@ class ChapterController extends Controller
 {
 
     protected $chapterRepo;
+    protected $imageRepo;
 
     /**
      * ChapterController constructor.
      */
-    public function __construct(ChapterRepo $chapterRepo)
+    public function __construct(ChapterRepo $chapterRepo, ImageRepo $imageRepo)
     {
         $this->chapterRepo = $chapterRepo;
+        $this->imageRepo = $imageRepo;
         parent::__construct();
     }
 
@@ -97,9 +100,29 @@ class ChapterController extends Controller
     public function update(Request $request, string $bookSlug, string $chapterSlug)
     {
         $chapter = $this->chapterRepo->getBySlug($bookSlug, $chapterSlug);
+        $icon = $chapter->with('icon')->where('id', $chapter->id)->first()->icon;
         $this->checkOwnablePermission('chapter-update', $chapter);
 
-        $this->chapterRepo->update($chapter, $request->all());
+        
+        // Update logo image if set
+        $this->preventAccessInDemoMode();
+        $this->validate($request, [
+            'icon_chapter' => $this->imageRepo->getImageValidationRules(),
+        ]);
+
+        if ($request->has('icon_chapter')) {
+            $this->chapterRepo->update($chapter, ['image_id' => null]);
+            if (!!$icon) $this->imageRepo->destroyImage($icon);
+            $image = $this->imageRepo->saveNew($request->file('icon_chapter', null), 'icon_chapter', 0, null, 86);
+            $request['image_id'] = $image->id;
+        }
+        // Clear icon chapter if requested
+        if ($request->get('icon_chapter_reset', null)) {
+            $this->chapterRepo->update($chapter, ['image_id' => null]);
+            if (!!$icon) $this->imageRepo->destroyImage($icon);
+        }
+
+        $chapterRepo = $this->chapterRepo->update($chapter, $request->all());
         Activity::add($chapter, 'chapter_update', $chapter->book->id);
 
         return redirect($chapter->getUrl());
