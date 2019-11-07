@@ -1,5 +1,5 @@
 <div class="relative-position entity-list-item" style="padding: 0;">
-    <a href="{{ (!!$chapter->link) ? $chapter->link : $chapter->getUrl() }}" class="chapter entity-list-item @if($chapter->hasChildren()) has-children @endif" data-entity-type="chapter" data-entity-id="{{$chapter->id}}">
+    <a href="{{ (!!$chapter->link) ? $chapter->link : $chapter->getUrl() }}" class="chapter entity-list-item @if($chapter->hasChildren()) has-children @endif" data-entity-type="chapter" data-entity-id="{{$chapter->id}}" @if (!!$chapter->link) target="__blank" @endif>
         <span class="icon text-chapter">@icon('chapter')</span>
         @if ($chapter->image_id)
         <div>

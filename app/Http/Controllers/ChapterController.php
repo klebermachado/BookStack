@@ -53,6 +53,17 @@ class ChapterController extends Controller
         $book = Book::visible()->where('slug', '=', $bookSlug)->firstOrFail();
         $this->checkOwnablePermission('chapter-create', $book);
 
+        // Update logo image if set
+        $this->preventAccessInDemoMode();
+        $this->validate($request, [
+            'icon_chapter' => $this->imageRepo->getImageValidationRules(),
+        ]);
+
+        if ($request->has('icon_chapter')) {
+            $image = $this->imageRepo->saveNew($request->file('icon_chapter', null), 'icon_chapter', 0, null, 86);
+            $request['image_id'] = $image->id;
+        }
+
         $chapter = $this->chapterRepo->create($request->all(), $book);
         Activity::add($chapter, 'chapter_create', $book->id);
 
