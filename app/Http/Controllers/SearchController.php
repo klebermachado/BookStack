@@ -39,7 +39,7 @@ class SearchController extends Controller
         $page = intval($request->get('page', '0')) ?: 1;
         $nextPageLink = url('/search?term=' . urlencode($searchTerm) . '&page=' . ($page+1));
 
-        $results = $this->searchService->searchEntities($searchTerm, 'all', $page, 20);
+        $results = $this->searchService->searchEntities("%" . $searchTerm . "%", 'all', $page, 20);
 
         return view('search.all', [
             'entities'   => $results['results'],
@@ -89,7 +89,7 @@ class SearchController extends Controller
             $entities = $this->viewService->getPopular(20, 0, $entityTypes, $permission);
         }
 
-        return view('search.entity-ajax-list', ['entities' => $entities]);
+        return view('search.entity-ajax-list', ['entities' => $entities, 'searchTerm' => $searchTerm]);
     }
 
     /**
