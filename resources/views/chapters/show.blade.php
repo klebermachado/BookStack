@@ -16,7 +16,16 @@
     </div>
 
     <main class="content-wrap card">
-        <h1 class="break-text" v-pre>{{ $chapter->name }}</h1>
+        @if($chapter->link)
+        <a style="padding-right: 10px;" href="{{$chapter->link}}" target="__blank">
+            @if($chapter->image_id)
+            <img style="width: 35px; outline: none;" src="{{$chapter->getChapterCover()}}">
+            @else
+            {{$chapter->link}}
+            @endif
+        </a>
+        @endif
+        <h1 class="break-text" v-pre style="display: inline-block;">{{ $chapter->name }}</h1>
         <div class="chapter-content" v-show="!searching">
             <p v-pre class="text-muted break-text">{!! nl2br(e($chapter->description)) !!}</p>
             @if(count($pages) > 0)
