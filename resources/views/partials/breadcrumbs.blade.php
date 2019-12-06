@@ -4,7 +4,7 @@
     {{-- Show top level books item --}}
     @if (count($crumbs) > 0 && ($crumbs[0] ?? null) instanceof  \BookStack\Entities\Book)
         <a href="{{  url('/books')  }}" class="text-book icon-list-item outline-hover">
-            <span>@icon('books')</span>
+            <span>@icon('service')</span>
             <span>{{ trans('entities.books') }}</span>
         </a>
         <?php $breadcrumbCount++; ?>
@@ -13,7 +13,7 @@
     {{-- Show top level shelves item --}}
     @if (count($crumbs) > 0 && ($crumbs[0] ?? null) instanceof  \BookStack\Entities\Bookshelf)
         <a href="{{  url('/shelves')  }}" class="text-bookshelf icon-list-item outline-hover">
-            <span>@icon('organization')</span>
+            <span>@icon('category')</span>
             <span>{{ trans('entities.shelves') }}</span>
         </a>
         <?php $breadcrumbCount++; ?>

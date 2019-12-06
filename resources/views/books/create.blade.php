@@ -15,7 +15,7 @@
                 @include('partials.breadcrumbs', ['crumbs' => [
                     '/books' => [
                         'text' => trans('entities.books'),
-                        'icon' => 'book'
+                        'icon' => 'service'
                     ],
                     '/create-book' => [
                         'text' => trans('entities.books_create'),

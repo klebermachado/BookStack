@@ -8,7 +8,7 @@ return [
     'image_select' => 'Selecionar imagem',
     'image_all' => 'Todos',
     'image_all_title' => 'Visualizar todas as imagens',
-    'image_book_title' => 'Visualizar imagens relacionadas a esse departamento',
+    'image_book_title' => 'Visualizar imagens relacionadas a esse serviço',
     'image_page_title' => 'visualizar imagens relacionadas a essa página',
     'image_search_hint' => 'Pesquisar imagem por nome',
     'image_uploaded' => 'Carregado :uploadedDate',

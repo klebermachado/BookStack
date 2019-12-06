@@ -35,6 +35,7 @@ return [
     'reply' => 'Responder',
     'delete' => 'Excluir',
     'search' => 'Pesquisar',
+    'search_all' => 'Pesquisar por Categoria/Serviço',
     'search_clear' => 'Limpar Pesquisa',
     'reset' => 'Resetar',
     'remove' => 'Remover',

@@ -26,22 +26,22 @@ return [
     'chapter_move'                => 'capitulo movido',
 
     // Books
-    'book_create'                 => 'departamento criado',
-    'book_create_notification'    => 'Departamento criado com sucesso',
-    'book_update'                 => 'departamento atualizado',
-    'book_update_notification'    => 'Departamento atualizado com sucesso',
-    'book_delete'                 => 'departamento excluído',
-    'book_delete_notification'    => 'Departamento excluído com sucesso',
-    'book_sort'                   => 'departamento classificado',
-    'book_sort_notification'      => 'Departamento reclassificado com sucesso',
+    'book_create'                 => 'serviço criado',
+    'book_create_notification'    => 'Serviço criado com sucesso',
+    'book_update'                 => 'serviço atualizado',
+    'book_update_notification'    => 'Serviço atualizado com sucesso',
+    'book_delete'                 => 'serviço excluído',
+    'book_delete_notification'    => 'Serviço excluído com sucesso',
+    'book_sort'                   => 'serviço classificado',
+    'book_sort_notification'      => 'Serviço reclassificado com sucesso',
 
     // Bookshelves
     'bookshelf_create'            => 'prateleira de livros criada',
-    'bookshelf_create_notification'    => 'Unidade de Departamentos criada com sucesso',
-    'bookshelf_update'                 => 'unidade de departamentos atualizada',
-    'bookshelf_update_notification'    => 'Unidade de Departamentos atualizada com sucesso',
-    'bookshelf_delete'                 => 'unidade de departamentos excluída',
-    'bookshelf_delete_notification'    => 'Unidade de Departamentos excluída com sucesso',
+    'bookshelf_create_notification'    => 'Categoria de Serviços criada com sucesso',
+    'bookshelf_update'                 => 'categoria de serviços atualizada',
+    'bookshelf_update_notification'    => 'Categoria de Serviços atualizada com sucesso',
+    'bookshelf_delete'                 => 'categoria de serviços excluída',
+    'bookshelf_delete_notification'    => 'Categoria de Serviços excluída com sucesso',
 
     // Other
     'commented_on'                => 'comentou em',

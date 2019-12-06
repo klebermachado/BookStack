@@ -17,9 +17,9 @@
             @if (hasAppAccess())
             <form action="{{ url('/search') }}" method="GET" class="search-box" role="search">
             <input id="header-search-box-input" type="text" name="term"
-                aria-label="{{ trans('common.search') }}" placeholder="{{ trans('common.search') }} por Unidades/Departamentos/Serviços"
+                aria-label="{{ trans('common.search_all') }}" placeholder="{{ trans('common.search_all') }}"
                 value="{{ isset($searchTerm) ? $searchTerm : '' }}">
-            <button id="header-search-box-button" type="submit" aria-label="{{ trans('common.search') }}" tabindex="-1">@icon('search') </button>
+            <button id="header-search-box-button" type="submit" aria-label="{{ trans('common.search_all') }}" tabindex="-1">@icon('search') </button>
             </form>
             @endif
         </div>
@@ -30,7 +30,7 @@
                     @if (hasAppAccess())
                         <a class="hide-over-l" href="{{ url('/search') }}">@icon('search'){{ trans('common.search') }}</a>
                         @if(userCanOnAny('view', \BookStack\Entities\Bookshelf::class) || userCan('bookshelf-view-all') || userCan('bookshelf-view-own'))
-                            <a href="{{ url('/shelves') }}">@icon('organization'){{ trans('entities.shelves') }}</a>
+                            <a href="{{ url('/shelves') }}">@icon('category'){{ trans('entities.shelves') }}</a>
                         @endif
                         <a href="{{ url('/books') }}">@icon('books'){{ trans('entities.books') }}</a>
                         @if(signedInUser() && userCan('settings-manage'))
