@@ -345,6 +345,9 @@ div[editor-type="markdown"] .title-input.page-title input[type="text"] {
 .search-box {
   max-width: 100%;
   position: relative;
+  #header-search-box-input:focus + #header-search-box-button {
+    fill: #818181;
+  }
   button {
     background-color: transparent;
     border: none;
@@ -353,13 +356,19 @@ div[editor-type="markdown"] .title-input.page-title input[type="text"] {
     cursor: pointer;
     position: absolute;
     left: 8px;
-    top: 9px;
+    top: 7px;
   }
   input {
     display: block;
     padding-left: $-l + 4px;
-    width: 300px;
+    width: 100%;
     max-width: 100%;
+    &:focus {
+      color: #414141;
+    }
+    &:focus::placeholder {
+      color: #818181;
+    }
   }
   &.flexible input {
     width: 100%;

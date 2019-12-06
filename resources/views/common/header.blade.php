@@ -13,13 +13,13 @@
             <div class="mobile-menu-toggle hide-over-l">@icon('more')</div>
         </div>
 
-        <div class="header-search hide-under-l">
+        <div class="header-search">
             @if (hasAppAccess())
             <form action="{{ url('/search') }}" method="GET" class="search-box" role="search">
-                <button id="header-search-box-button" type="submit" aria-label="{{ trans('common.search') }}" tabindex="-1">@icon('search') </button>
-                <input id="header-search-box-input" type="text" name="term"
-                       aria-label="{{ trans('common.search') }}" placeholder="{{ trans('common.search') }}"
-                       value="{{ isset($searchTerm) ? $searchTerm : '' }}">
+            <input id="header-search-box-input" type="text" name="term"
+                aria-label="{{ trans('common.search') }}" placeholder="{{ trans('common.search') }} por Unidades/Departamentos/Serviços"
+                value="{{ isset($searchTerm) ? $searchTerm : '' }}">
+            <button id="header-search-box-button" type="submit" aria-label="{{ trans('common.search') }}" tabindex="-1">@icon('search') </button>
             </form>
             @endif
         </div>
@@ -71,6 +71,5 @@
                 @endif
             </nav>
         </div>
-
     </div>
 </header>

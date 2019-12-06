@@ -21,3 +21,9 @@
     </div>
     @endauth
 @stop
+
+@section('scripts')
+    <script>
+        document.getElementById("header-search-box-input").focus()
+    </script>
+@stop
